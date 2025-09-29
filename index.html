@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Enzo Eguiluz</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0A3D62', // Dark blue
+                        secondary: '#E8F1FF', // Light blue/white
+                        accent: '#FFD700', // Gold/yellow for highlights
+                        background: '#041F3A', // Even darker blue
+                        text_primary: '#FFFFFF',
+                        text_secondary: '#D1D9E6'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #041F3A;
+            color: #FFFFFF;
+        }
+        .bg-blueprint {
+            background-color: #0A3D62;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .card {
+            background-color: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .btn-primary {
+            background-color: #FFD700;
+            color: #041F3A;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+        }
+        .icon-container {
+            background-color: rgba(255, 215, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background font-inter">
+
+    <!-- Header & Navigation -->
+    <header class="p-6 md:p-8 flex justify-between items-center bg-primary text-white fixed top-0 w-full z-50">
+        <div class="text-2xl font-bold">Enzo Eguiluz</div>
+        <nav class="hidden md:flex space-x-6 text-lg">
+            <a href="#inicio" class="hover:text-accent transition duration-300">Inicio</a>
+            <a href="#servicios" class="hover:text-accent transition duration-300">Servicios</a>
+            <a href="#experiencia" class="hover:text-accent transition duration-300">Experiencia</a>
+            <a href="#contacto" class="hover:text-accent transition duration-300">Contacto</a>
+        </nav>
+        <button id="menu-button" class="md:hidden text-white focus:outline-none">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </button>
+    </header>
+
+    <!-- Mobile Menu (Hidden by default) -->
+    <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-primary z-50 transform -translate-x-full transition-transform duration-300 ease-in-out">
+        <div class="flex justify-end p-6">
+            <button id="close-menu" class="text-white focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+        <nav class="flex flex-col items-center space-y-6 text-2xl">
+            <a href="#inicio" class="text-white hover:text-accent transition duration-300">Inicio</a>
+            <a href="#servicios" class="text-white hover:text-accent transition duration-300">Servicios</a>
+            <a href="#experiencia" class="text-white hover:text-accent transition duration-300">Experiencia</a>
+            <a href="#contacto" class="text-white hover:text-accent transition duration-300">Contacto</a>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 md:px-8 py-12 pt-28">
+
+        <!-- Home Section -->
+        <section id="inicio" class="flex flex-col md:flex-row items-center justify-center text-center md:text-left my-16">
+            <div class="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden mb-8 md:mb-0 md:mr-12 border-4 border-accent shadow-lg">
+                <img src="enzo.jpg" alt="Foto de Perfil de Enzo Eguiluz" class="w-full h-full object-cover">
+            </div>
+            <div>
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight">Enzo Eguiluz</h1>
+                <h2 class="text-2xl md:text-3xl text-accent my-2">Técnico en Mecánica Automotriz y Electrónica</h2>
+                <p class="text-lg md:text-xl text-text_secondary mt-4 max-w-2xl mx-auto md:mx-0">Gran motivación para perfeccionar destrezas y crecer profesionalmente. Confío plenamente en mi capacidad de resolución de problemas, entregando un servicio 100% completo.</p>
+                <div class="mt-6 flex flex-col sm:flex-row items-center justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="https://wa.me/56997707402" target="_blank" class="btn-primary py-3 px-8 rounded-full font-semibold shadow-lg hover:shadow-2xl transition-all duration-300">
+                        Contactar por WhatsApp
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="servicios" class="my-24 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-12">Servicios</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Preventivo Card -->
+                <div class="card p-6 rounded-3xl shadow-lg border-primary">
+                    <div class="icon-container w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FFD700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4">Mantenimiento Preventivo</h3>
+                    <p class="text-text_secondary text-left">
+                        - Cambio de fluidos y filtros.<br>
+                        - Revisión de neumáticos y tren delantero.<br>
+                        - Inspección de bujías y embrague.<br>
+                        - Chequeo de suspensión y amortiguadores.<br>
+                    </p>
+                </div>
+
+                <!-- Correctivo Card -->
+                <div class="card p-6 rounded-3xl shadow-lg border-primary">
+                    <div class="icon-container w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FFD700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wrench"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.77 3.77Z"/><path d="m15 5 2 2"/></svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4">Mantenimiento Correctivo</h3>
+                    <p class="text-text_secondary text-left">
+                        - Reparación de motor y transmisión.<br>
+                        - Reparación de sistema de frenos.<br>
+                        - Reemplazo de bombas y cañerías.<br>
+                        - Reparación de crucetas, axiales y terminales.<br>
+                    </p>
+                </div>
+
+                <!-- Diagnóstico & Electrónica Card -->
+                <div class="card p-6 rounded-3xl shadow-lg border-primary">
+                    <div class="icon-container w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FFD700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-scan-line"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><line x1="7" x2="17" y1="12" y2="12"/></svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4">Electrónica & Diagnóstico</h3>
+                    <p class="text-text_secondary text-left">
+                        - Diagnóstico con escáner.<br>
+                        - Servicios electrónicos en general.<br>
+                        - Instalación de accesorios.<br>
+                        - Reparación de sistemas de audio e iluminación.<br>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="galeria" class="my-24 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-12">Galería & Casos Destacados</h2>
+            <div class="card p-6 rounded-3xl shadow-lg max-w-3xl mx-auto">
+                <img src="nissan_3d.png" alt="Esquema Técnico de un Automóvil" class="w-full rounded-2xl mb-6 border border-accent">
+                <h3 class="text-2xl font-semibold mb-2">Esquema de Ingeniería Automotriz</h3>
+                <p class="text-text_secondary">
+                    Este es un ejemplo de la atención al detalle y el enfoque técnico en cada trabajo. Utilizando herramientas de diagnóstico y conocimientos de ingeniería para garantizar un servicio de calidad.
+                </p>
+            </div>
+        </section>
+
+        <!-- Experience & Skills Section -->
+        <section id="experiencia" class="my-24">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Experience -->
+                <div class="card p-6 rounded-3xl shadow-lg">
+                    <h2 class="text-3xl font-bold mb-6 text-center">Experiencia Laboral</h2>
+                    <div class="space-y-8">
+                        <div>
+                            <h3 class="text-xl font-semibold text-accent">Rental y Servicios</h3>
+                            <p class="text-text_secondary text-sm">MAY 2023 - Actualidad</p>
+                            <ul class="list-disc list-inside mt-2 text-text_secondary space-y-1">
+                                <li>Mantención y reparación de maquinaria pesada.</li>
+                                <li>Reparación y mantención de camiones, vehículos livianos y equipos menores.</li>
+                                <li>Atención en faenas mineras con soluciones rápidas.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-accent">SZ Iquique</h3>
+                            <p class="text-text_secondary text-sm">ENE 2021 - ABR 2023</p>
+                            <ul class="list-disc list-inside mt-2 text-text_secondary space-y-1">
+                                <li>Mantención y reparación de vehículos livianos.</li>
+                                <li>Modificación de vehículos y fabricación de piezas.</li>
+                                <li>Diagnóstico automotriz con escáner.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-accent">Kaufmann</h3>
+                            <p class="text-text_secondary text-sm">JUN 2019 - DIC 2019</p>
+                            <ul class="list-disc list-inside mt-2 text-text_secondary space-y-1">
+                                <li>Mantenimiento y reparación de una flota de más de 60 camiones Mercedes Benz.</li>
+                                <li>Trabajo bajo condiciones extremas y monitoreo diario de la flota.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills & Certifications -->
+                <div class="card p-6 rounded-3xl shadow-lg">
+                    <h2 class="text-3xl font-bold mb-6 text-center">Habilidades & Certificados</h2>
+                    <div class="space-y-8">
+                        <div>
+                            <h3 class="text-xl font-semibold text-accent">Habilidades</h3>
+                            <ul class="list-disc list-inside mt-2 text-text_secondary space-y-1">
+                                <li>Resolución de problemas con pocas herramientas.</li>
+                                <li>Gran rendimiento bajo presión.</li>
+                                <li>Facilidad para seguir instrucciones y generar resultados de calidad.</li>
+                                <li>Atención al cliente y trabajo en equipo.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-accent">Certificaciones y Cursos</h3>
+                            <ul class="list-disc list-inside mt-2 text-text_secondary space-y-1">
+                                <li>Licencia de Conducir Clase B.</li>
+                                <li>Cursos Bosch: Filtros y Baterías.</li>
+                                <li>Curso de Conducción en Alta Montaña (Teck).</li>
+                                <li>Idioma: Inglés avanzado, escrito y hablado.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-accent">Educación</h3>
+                            <ul class="list-disc list-inside mt-2 text-text_secondary space-y-1">
+                                <li>Técnico Nivel Superior en Mecánica Automotriz y Sistemas Electrónicos, Universidad Tecnológica INACAP.</li>
+                                <li>Técnico Medio en Electrónica, Colegio Inglés Iquique.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contacto" class="my-24 text-center max-w-xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">Contacto</h2>
+            <p class="text-text_secondary mb-8">
+                ¿Tienes un proyecto en mente o necesitas un servicio? ¡Contáctame directamente!
+            </p>
+            <div class="card p-8 rounded-3xl shadow-lg border-primary text-left">
+                <form action="https://formspree.io/f/meoraven" method="POST" class="space-y-4">
+                    <div>
+                        <label for="name" class="block text-text_secondary mb-2">Nombre</label>
+                        <input type="text" id="name" name="name" class="w-full p-3 rounded-xl bg-background border border-primary focus:outline-none focus:ring-2 focus:ring-accent" required>
+                    </div>
+                    <div>
+                        <label for="email" class="block text-text_secondary mb-2">Email</label>
+                        <input type="email" id="email" name="email" class="w-full p-3 rounded-xl bg-background border border-primary focus:outline-none focus:ring-2 focus:ring-accent" required>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-text_secondary mb-2">Mensaje</label>
+                        <textarea id="message" name="message" rows="5" class="w-full p-3 rounded-xl bg-background border border-primary focus:outline-none focus:ring-2 focus:ring-accent" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary w-full py-3 rounded-xl font-semibold shadow-md hover:shadow-xl transition-all duration-300">
+                        Enviar Mensaje
+                    </button>
+                </form>
+                <!--p class="mt-4 text-center text-text_secondary text-sm">
+                    Reemplaza "your-form-id" en el action del formulario con tu ID de Formspree para recibir los mensajes.
+                </p-->
+                <div class="mt-8 text-center">
+                    <p class="text-lg font-semibold">O contáctame directamente:</p>
+                    <div class="mt-4 flex flex-wrap justify-center items-center space-x-4">
+                        <a href="mailto:enzoeguiluz@gmail.com" class="hover:text-accent transition duration-300 flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                            <span class="ml-2">Email</span>
+                        </a>
+                        <a href="https://wa.me/56997707402" target="_blank" class="hover:text-accent transition duration-300 flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-square-text"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><line x1="10" x2="14" y1="7" y2="7"/><line x1="12" x2="12" y1="11" y2="11"/></svg>
+                            <span class="ml-2">WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center p-6 text-text_secondary text-sm">
+        <p>&copy; 2025 Enzo Eguiluz. Creado por <a href="www.nuevacumbre.cl" target="_blank" rel="noopener noreferrer">Nuevacumbre.cl</a></p>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuButton = document.getElementById('menu-button');
+            const closeMenuButton = document.getElementById('close-menu');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            menuButton.addEventListener('click', () => {
+                mobileMenu.classList.remove('hidden');
+                setTimeout(() => {
+                    mobileMenu.classList.remove('-translate-x-full');
+                }, 10);
+            });
+
+            closeMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.add('-translate-x-full');
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                }, 300);
+            });
+
+            // Close menu when a link is clicked
+            document.querySelectorAll('#mobile-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('-translate-x-full');
+                    setTimeout(() => {
+                        mobileMenu.classList.add('hidden');
+                    }, 300);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
